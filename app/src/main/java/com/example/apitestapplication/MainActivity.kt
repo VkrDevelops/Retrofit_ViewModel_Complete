@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         val call=client.getproductlist()
         call.enqueue(object : Callback<ProductModel>{
             override fun onResponse(call: Call<ProductModel>, response: Response<ProductModel>) {
-                if(response!!.isSuccessful){
+                if(response.isSuccessful){
                     productModel=response.body()!!
                     mainViewModel.productlist.value=productModel
 
